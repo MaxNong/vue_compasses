@@ -1,0 +1,28 @@
+{
+  "name": "vue_compasses",
+  "version": "1.0.0",
+  "description": "structure a vue project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node build/dev-server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/baoqiangQD/bestvue.git"
+  },
+  "author": "baoqiang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/baoqiangQD/bestvue/issues"
+  },
+  "homepage": "https://github.com/baoqiangQD/bestvue#readme",
+  "dependencies": {
+    "vue": "^2.3.4"
+  },
+  "devDependencies": {
+    "express": "^4.15.3",
+    "webpack": "^3.1.0",
+    "webpack-hot-middleware": "^2.18.2"
+  }
+}
