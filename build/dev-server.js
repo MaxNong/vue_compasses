@@ -7,11 +7,10 @@ var config = require('../webpack.config.js')
 var app = express()
 var compiler = webpack(config)
 app.use(webpackDevMiddleware(compiler, {
-  noInfo: true,
-  publicPath: config.output.publicPath
+  publicPath: "/"
 }))
 app.use(webpackHotMiddleware(compiler))
-app.listen(7777, function (err) {
+app.listen(7778, function (err) {
   if (err) {
     console.log(err)
     return
