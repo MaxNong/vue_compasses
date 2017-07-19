@@ -11,9 +11,8 @@ Vue.startApp = function () {
   })
   MyComponent.$mount('#app')
   console.log(MyComponent)*/
-  alert(444)
   const app = new Vue({
-    template: '<App />',
+    template: '<App/>',
     components: { App }
   }).$mount('#app')
 }

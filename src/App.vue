@@ -1,13 +1,17 @@
 <template>
-    <div class="appTop">{{message}}</div>
-
+    <div class="main">
+        <div class="topbanner">
+            <ul>
+                <li><span class="icon-leftbtn"></span></li>
+                <li><span class="icon-mymusic"></span></li>
+                <li><span class="icon-moremusic"></span></li>
+                <li><span class="icon-public"></span></li>
+            </ul>
+        </div>
+    </div>
 </template>
-<style>
-    .appTop {
-        width: 100px;
-        height: 100px;
-        background: red;
-    }
+<style lang="sass">
+    @import "./assets/scss/common.scss";
 </style>
 <script>
   export default {
