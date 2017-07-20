@@ -2,8 +2,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 window.Vue = Vue
-var compile = new Vue()
-console.log(compile)
+/*var compile = new Vue()
+console.log(compile)*/
 Vue.startApp = function () {
  /* Vue.component('my-component', {template: '<div>333</div>'})
   var MyComponent = new Vue({

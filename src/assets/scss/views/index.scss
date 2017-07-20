@@ -2,7 +2,8 @@
   margin: 0;
   padding: 0;
 }
-.main{
+
+.main {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -11,12 +12,20 @@
 .topbanner {
   width: 100%;
   height: 100px;
-  background-color: red;
-  li {
+  background-color: #D23931;
+  .half{
+    width: 25%;
+  }
+  .other-half{
+    width: 50%;
+    dt{
+      width: 33.3%;
+      float: left;
+    }
+  }
+  dd {
     text-align: center;
     line-height: 100px;
-    width: 25%;
-    height: 100px;
     float: left;
     list-style-type: none;
     padding-top: 23px;
