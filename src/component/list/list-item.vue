@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div :class="{martop: isMarTop}" v-show="showHide">
         <ul class="list-item">
             <li v-for="item in items">
                 <div :class=item.left_icon class="icon-middle"></div>
@@ -12,12 +12,22 @@
 
 </style>
 <script>
-  export default {
-    props: {
-      items: {
-        type: Array,
-        require: true
-      }
+    export default {
+        props: {
+            items: {
+                type: Array,
+                require: true
+            },
+            showHide: {
+                type: Boolean,
+                require: false,
+                default: true
+            },
+            isMarTop: {
+                type: Boolean,
+                require: false,
+                default: false
+            }
+        }
     }
-  }
 </script>

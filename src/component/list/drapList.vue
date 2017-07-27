@@ -1,26 +1,41 @@
 <template>
     <div>
-        <div class="toptrans">
-            <i class="icon-down midpic"></i>
-            <span>创建的歌单</span>
+        <div @click="showHideList()" class="toptrans">
+            <i :class="[upDown ? 'icon-up' : 'icon-down', 'midpic']"></i>
+            <span>{{title}}</span>
             <i class="icon-set midpic flo-right"></i>
         </div>
-        <listitem :items="items"></listitem>
+        <listitem :showHide="showHide" :items="items"></listitem>
     </div>
 </template>
 <style>
 
 </style>
 <script>
-  import listitem from '../../component/list/list-item.vue'
-    import contentCon from '../../constants/contentCon'
+    import listitem from '../../component/list/list-item.vue'
     export default {
-      data () {
-        return {
-          items: contentCon.localListKinds,
+        props: {
+            title: {
+                type: String,
+                default: ''
+            },
+            items: {
+                type: Array,
+                default: []
+            }
+        },
+        data () {
+            return {
+                showHide: true,
+                upDown: false
+            }
+        },
+        components: {listitem},
+        methods: {
+            showHideList: function () {
+                this.showHide = !this.showHide
+                this.upDown = !this.upDown
+            }
         }
-      },
-      components: {listitem}
     }
-
 </script>
