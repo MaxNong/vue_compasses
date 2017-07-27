@@ -12,6 +12,7 @@
             </dl>
         </div>
         <listitem :items="items"></listitem>
+        <draplist></draplist>
     </div>
 </template>
 <style lang="sass">
@@ -19,14 +20,17 @@
 </style>
 <script>
   import listitem from './component/list/list-item.vue'
+  import contentCon from './constants/contentCon'
+  import draplist from './component/list/drapList.vue'
   export default {
-    components: {listitem},
+    components: {
+      listitem,
+      draplist
+    },
     data() {
       return {
-        items: [
-          {message: '本地音乐', left_icon: 'icon-leftbtn' },
-          {message: '最近播放', left_icon: 'icon-leftbtn'}
-        ]
+        items: contentCon.localListKinds,
+        drapitems: contentCon.localMusicKinds
       }
     }
   }
