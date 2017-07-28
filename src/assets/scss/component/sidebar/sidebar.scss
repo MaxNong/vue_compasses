@@ -1,0 +1,119 @@
+/*
+* @Author: 002010
+* @Date:   2017-07-28 11:34:43
+* @Last Modified by:   002010
+* @Last Modified time: 2017-07-28 15:31:32
+*/
+.mask{
+	width:100%;
+	height: 100%;
+	background: rgba(0,0,0,.3);
+	position: fixed;
+	top:0;
+	left:-100%;
+	bottom:0;
+	z-index: 20;
+}
+.sidebar{
+	background: #fff;
+	height: 100%;
+	width:80%;
+	position: relative;
+	color:#333;
+	z-index: 99;
+	&-title{
+		position: relative;
+		padding:10px 15px 15px; 
+		background: #ccc;
+		color:#fff;
+		h3{
+			margin-top: 10px;
+			font-size: 18px;
+			i{
+				font-size: 12px;
+				border:1px solid #fff;
+				border-radius: 15px;
+				display: inline-block;
+				padding:0 5px;
+				line-height: 13px;
+				vertical-align: middle;
+				font-style: italic;
+			}
+		}
+		span{
+			font-size: 14px;
+			position: absolute;
+			right:15px;
+			border:1px solid #fff;
+			border-radius: 15px;
+			bottom:15px;
+			width:60px;
+			height: 25px;
+			text-align: center;
+			line-height: 25px;
+		}
+	}
+	&-content{
+		overflow: scroll;
+		padding:10px 15px;
+		li{
+			padding:10px 0;
+			display: flex;
+			font-size: 14px;
+  		display: -webkit-box;
+			align-items:center;
+			&.border-top{
+				margin:0 -15px;
+				padding:10px 15px;
+				border-top: 10px solid #ccc;
+			}
+		}
+		.side-left{
+				margin-right: 10px;
+				flex: initial;
+		  	-webkit-box-flex: initial;
+		}
+		.side-center{
+				flex: 1;
+		  	-webkit-box-flex:1;
+		}
+		span{
+			color:#999;
+			flex: initial;
+		  -webkit-box-flex: initial;
+		}
+	}
+	&-foot{
+		border-top:1px solid #ccc;
+		position: fixed;
+		bottom:0;
+		padding:15px 15px;
+		display: flex; 
+		width:73%;
+		display: -webkit-box;
+		span{
+			text-align: center;
+			display: block;
+			flex:1;
+			-webkit-box-flex: 1;
+			-webkit-flex:1;
+			font-size: 14px;
+			img{
+				margin-right: 10px;
+			}
+		}
+	}
+}
+//mask1 为切换的类
+.mask1{
+	width:100%;
+	height: 100%;
+	background: rgba(0,0,0,.3);
+	position: fixed;
+	top:0;
+	left:0;
+	bottom:0;
+	z-index: 20;
+	transition:1s;
+	-webkit-transition:1s;
+}

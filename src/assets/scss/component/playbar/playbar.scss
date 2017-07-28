@@ -1,0 +1,98 @@
+.playbar {
+  position: fixed;
+  bottom: 0;
+  height: 3rem;
+  width: 100%;
+  background-color: #ffffff;
+  font-size: 14px;
+  padding: 10px;
+  .left {
+    float: left;
+    width: 75%;
+    .center {
+      display: inline-block;
+      margin-left: 5px;
+    }
+    .lefticon {
+      float: left;
+    }
+  }
+  .right {
+    float: left;
+    width: 25%;
+  }
+  img {
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+
+  }
+  .marlef {
+    float: right;
+    margin-right: 30px;
+  }
+}
+
+.playlist {
+  background-color: #F3F3F3;
+  position: fixed;
+  width: 100%;
+  height: 500px;
+  bottom: -500px;
+  z-index: 21;
+}
+
+.playlist1 {
+  background-color: #F3F3F3;
+  position: fixed;
+  width: 100%;
+  height: 500px;
+  bottom: 0;
+  transition: 1s;
+  -webkit-transition: 0.5s;
+  z-index: 21;
+}
+
+.maskscreen {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 20;
+}
+
+.muslist-top {
+  height: 3rem;
+  padding: 10px;
+  line-height: 3rem;
+  border-bottom: 1px solid gray;
+  font-size: 14px;
+  .muslist-left {
+    float: left;
+    width: 50%;
+    img {
+      width: 25px;
+      height: 25px;
+    }
+  }
+  .muslist-right {
+    float: right;
+    width: 50%;
+    img {
+      width: 25px;
+      height: 25px;
+    }
+    .muslist-right-collect {
+      float: left;
+
+    }
+    .muslist-right-empty {
+      float: right;
+      margin-right: 10px;
+    }
+  }
+}
+

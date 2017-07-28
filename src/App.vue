@@ -2,7 +2,7 @@
     <div class="main">
         <div class="topbanner">
             <dl>
-                <dd class="half"><span class="icon-navlist"></span></dd>
+                <dd @click="isShowLeft=true" class="half"><span class="icon-navlist"></span></dd>
                 <dd class="other-half">
                 <dt><span class="icon-leftbtn"></span></dt>
                 <dt><span class="icon-mymusic"></span></dt>
@@ -14,28 +14,33 @@
         <listitem :isMarTop="true" :items="localListKinds"></listitem>
         <draplist :items="localMusicKinds" title="创建的歌单"></draplist>
         <draplist :items="localCollectKinds" title="收藏的歌单"></draplist>
-        <!--<div class="leftmenu"></div>-->
+        <leftbar :isShow.sync="isShowLeft"></leftbar>
+        <playbar></playbar>
     </div>
-
 </template>
 <style lang="sass">
-    @import "./assets/scss/common.scss"
+    @import "./assets/scss/common.scss";
 </style>
 <script>
-    import listitem from './component/list/list-item.vue'
-    import contentCon from './constants/contentCon'
-    import draplist from './component/list/drapList.vue'
-    export default {
-        components: {
-            listitem,
-            draplist
-        },
-        data() {
-            return {
-                localListKinds: contentCon.localListKinds,
-                localMusicKinds: contentCon.localMusicKinds,
-                localCollectKinds: contentCon.localCollectKinds
-            }
-        }
+  import listitem from './component/list/list-item.vue'
+  import contentCon from './constants/contentCon'
+  import draplist from './component/list/drapList.vue'
+  import playbar from './component/playbar/index.vue'
+  import leftbar from './component/sidebar/index.vue'
+  export default {
+    components: {
+      listitem,
+      draplist,
+      playbar,
+      leftbar
+    },
+    data() {
+      return {
+        localListKinds: contentCon.localListKinds,
+        localMusicKinds: contentCon.localMusicKinds,
+        localCollectKinds: contentCon.localCollectKinds,
+        isShowLeft: false
+      }
     }
+  }
 </script>

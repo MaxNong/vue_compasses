@@ -16,5 +16,12 @@ export default {
     localCollectKinds: [
         {message: '春风十里', left_icon: 'icon-leftbtn'},
         {message: '才子佳人', left_icon: 'icon-leftbtn'},
+    ],
+    playBarList: [
+      {musicname: '勋章', author: '鹿晗'},
+      {musicname: '非你莫属', author: '林依晨'},
+      {musicname: '反话', author: '林峰'},
+      {musicname: '你以为', author: '左颜'},
+      {musicname: '天地不容', author: '胡鸿均'}
     ]
 }

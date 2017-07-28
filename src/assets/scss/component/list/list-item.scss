@@ -1,11 +1,11 @@
 .list-item{
   width: 100%;
+  font-size: 14px;
   li{
     width: 100%;
-    height: 8rem;
+    height: 4rem;
     background-color: #F3F5F4;
     border-bottom:1px solid gray;
-    font-size: 30px;
     .icon-middle{
       width: 10%;
       height: 50%;
@@ -15,11 +15,10 @@
     }
     .messbox{
       display: inline-block;
-      font-size: 2.4rem;
       vertical-align: super;
     }
   }
 }
 .martop{
-  margin-top: 100px;
+  margin-top: 66px;
 }

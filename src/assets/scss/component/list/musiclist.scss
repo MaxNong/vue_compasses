@@ -1,0 +1,19 @@
+.undeterminedmus{
+  height: 3rem;
+  width: 100%;
+  line-height: 3rem;
+  font-size: 14px;
+  padding: 0 5px;
+  border-bottom: 1px solid ghostwhite;
+  .undeterminedmus-left{
+    float: left;
+  }
+  .undeterminedmus-right{
+    float: right;
+    margin-right: 10px;
+    img{
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
