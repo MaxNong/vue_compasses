@@ -12,8 +12,9 @@
 .topbanner {
   position: fixed;
   width: 100%;
-  background-color: #D23931;
+  background-color: silver;;
   padding: 2rem 0;
+  height: 3%;
   .half {
     width: 25%;
   }
@@ -64,4 +65,11 @@
   to {
     left: 200px;
   }
+}
+.maincontent{
+  overflow: scroll;
+  height: 93%;
+}
+.playbox{
+  height: 4%;
 }
