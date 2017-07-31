@@ -4,7 +4,7 @@
             <dl>
                 <dd @click="isShowLeft=true" class="half"><span class="icon-navlist"></span></dd>
                 <dd class="other-half">
-                <dt><span class="icon-localmusic"></span></dt>
+                <dt><span class="icon-localmusic-w"></span></dt>
                 <dt><span class="icon-remotemusic"></span></dt>
                 <dt><span class="icon-moremusic"></span></dt>
                 </dd>
@@ -24,7 +24,7 @@
     </div>
 </template>
 <style lang="sass">
-    @import "./assets/scss/common.scss"
+    @import "./assets/scss/common.scss";
 </style>
 <script>
   import listitem from './component/list/list-item.vue'
@@ -44,7 +44,7 @@
         localListKinds: contentCon.localListKinds,
         localMusicKinds: contentCon.localMusicKinds,
         localCollectKinds: contentCon.localCollectKinds,
-        isShowLeft: false
+        isShowLeft: false,
       }
     }
   }
