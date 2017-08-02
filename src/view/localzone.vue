@@ -1,7 +1,9 @@
 <template>
-    <listitem :isMarTop="true" :items="localListKinds"></listitem>
-    <draplist :items="localMusicKinds" title="创建的歌单"></draplist>
-    <draplist :items="localCollectKinds" title="收藏的歌单"></draplist>
+    <div>
+        <listitem :isMarTop="true" :items="localListKinds"></listitem>
+        <draplist :items="localMusicKinds" title="创建的歌单"></draplist>
+        <draplist :items="localCollectKinds" title="收藏的歌单"></draplist>
+    </div>
 </template>
 <style>
 

@@ -93,7 +93,6 @@
       }
     },
     created () {
-      console.log(this.ismask)
     },
     computed: {
       ismask: function () {

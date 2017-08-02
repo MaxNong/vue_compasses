@@ -23,5 +23,11 @@ export default {
       {musicname: '反话', author: '林峰'},
       {musicname: '你以为', author: '左颜'},
       {musicname: '天地不容', author: '胡鸿均'}
+    ],
+    remoteMusicTab: [//这里需要定义4个
+      {text: '个性推荐'},
+      {text: '歌单'},
+      {text: '主播电台'},
+      {text: '排行榜'},
     ]
 }
