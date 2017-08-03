@@ -74,3 +74,28 @@
 .playbox{
   height: 4%;
 }
+.remote-musicbar{
+  height: 5.5rem;
+  padding: 0.5rem 0;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid gray;
+  border-top: 1px solid gray;
+  ul{
+    width: 100%;
+    li{
+      width: 33.3%;
+      height: 5rem;
+      text-align: center;
+      box-sizing: border-box;
+      float: left;
+      span{
+        background-size: 100% 100%;
+        width: 45.28125px;
+        height: 45.28125px;
+        line-height: 45.28125px;
+        display: inline-block;
+      }
+    }
+  }
+}
