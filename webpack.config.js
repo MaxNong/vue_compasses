@@ -5,23 +5,23 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   entry: {
     index: './src/index',
+    // load: './src/load',
   },
   output: {
     path: path.join(__dirname, './dist'),
     filename: "[name].js"
   },
   plugins: [
-    /*new HtmlWebpackPlugin({
-      filename: 'login/login.html', //http访问路径
-      template: './login.html',
-      inject: true,
-      chunks: ['login']
-    }),*/
     new HtmlWebpackPlugin({
       template: './index.html',
       inject: true,
       chunks: ['index']
     }),
+    /*new HtmlWebpackPlugin({
+      template: './load.html',
+      inject: true,
+      chunks: ['load']
+    }),*/
   ],
   resolve: {
     alias: {

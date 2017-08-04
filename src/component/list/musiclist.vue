@@ -31,7 +31,6 @@
       }
     },
     created () {
-      console.log(this.items)
     }
   }
 </script>

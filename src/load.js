@@ -1,13 +1,13 @@
 'use strict'
 import Vue from 'vue'
-import App from './App.vue'
+import Load from './load.vue'
 import router from './router/router'
 window.Vue = Vue
 Vue.startApp = function () {
-  const app = new Vue({
+  const load = new Vue({
     router,
-    template: '<App/>',
-    components: {App}
-  }).$mount('#app')
+    template: '<load/>',
+    components: {Load}
+  }).$mount('#load')
 }
 Vue.startApp()

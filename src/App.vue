@@ -31,7 +31,8 @@
       }
     },
     created () {
-      this.$router.push({name: 'localzone'})
+      console.log(this.$route)
+      this.$route.name == 'home' ? this.$router.push({name: 'localzone'}) : ''
     }
   }
 </script>
