@@ -1,9 +1,13 @@
 <template>
     <div>
         <div @click="showHideList()" class="toptrans">
-            <i :class="[upDown ? 'icon-up' : 'icon-down', 'midpic']"></i>
+            <div class="flo-left midpic">
+                <i :class="[upDown ? 'icon-up' : 'icon-down']"></i>
+            </div>
             <span>{{title}}</span>
-            <i class="icon-set midpic flo-right"></i>
+            <div class="flo-right midpic">
+                <img src="../../assets/images/set.png" alt="">
+            </div>
         </div>
         <listitem :showHide="showHide" :items="items"></listitem>
     </div>
