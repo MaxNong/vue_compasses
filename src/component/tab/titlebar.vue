@@ -34,7 +34,7 @@
         this.$router.push({name: this.box[index]})
       },
       gonext: function () {
-        wind.location.herf='http://localhost:7778/#/load.html'
+        window.location.herf='http://localhost:7778/#/load.html'
       }
     }
   }

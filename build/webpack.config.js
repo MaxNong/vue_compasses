@@ -1,11 +1,15 @@
 var path = require('path')
 var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var aliasConfig = require('./aliasConfig')
+console.log(path.resolve(__dirname, '..', "src"))
+/*function resolve (dir) {
+ return path.join(__dirname, '..', dir)
+ }*/
 
 module.exports = {
   entry: {
-    index: './src/index',
-    // load: './src/load',
+    index: './src/index'
   },
   output: {
     path: path.join(__dirname, './dist'),
@@ -17,16 +21,13 @@ module.exports = {
       inject: true,
       chunks: ['index']
     }),
-    /*new HtmlWebpackPlugin({
-      template: './load.html',
-      inject: true,
-      chunks: ['load']
-    }),*/
   ],
   resolve: {
-    alias: {
-      'vue': 'vue/dist/vue.js'
-    }
+    extensions: ['.js', '.vue', '.json'],
+    modules: [
+      path.resolve(__dirname, "src"), "node_modules"
+    ],
+    alias: aliasConfig
   },
   module: {
     loaders: [
@@ -46,9 +47,9 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         /*query: {
-          limit: 10000,
-          name: utils.assetsPath('img/[name].[hash:7].[ext]')
-        }*/
+         limit: 10000,
+         name: utils.assetsPath('img/[name].[hash:7].[ext]')
+         }*/
       }
     ],
   }

@@ -13,7 +13,7 @@
     </div>
 </template>
 <style lang="sass">
-    @import "./assets/scss/common.scss";
+    @import "./assets/scss/common.scss"
 </style>
 <script>
   import titlebar from './component/tab/titlebar.vue'
@@ -31,7 +31,6 @@
       }
     },
     created () {
-      console.log(this.$route)
       this.$route.name == 'home' ? this.$router.push({name: 'localzone'}) : ''
     }
   }
