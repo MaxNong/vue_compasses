@@ -9,7 +9,8 @@
 
 </style>
 <script>
-  import listitem from '../component/list/list-item.vue'
+  import listitem from 'listitem'
+  import share from '../launch/share.js'
   import contentCon from '../constants/contentCon'
   import draplist from '../component/list/drapList.vue'
   import leftbar from '../component/sidebar/index.vue'
@@ -18,6 +19,9 @@
       listitem,
       draplist,
       leftbar
+    },
+    created () {
+      share.init()
     },
     data() {
       return {

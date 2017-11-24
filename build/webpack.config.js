@@ -1,18 +1,19 @@
 var path = require('path')
 var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
-var aliasConfig = require('./aliasConfig')
-console.log(path.resolve(__dirname, '..', "src"))
-/*function resolve (dir) {
- return path.join(__dirname, '..', dir)
- }*/
+var aliasConfig = require('./aliasConfig.js')
+
+function resolve(dir) {
+  console.log(path.join(__dirname, '..', dir))
+  return path.join(__dirname, '..', dir)
+}
 
 module.exports = {
   entry: {
     index: './src/index'
   },
   output: {
-    path: path.join(__dirname, './dist'),
+    path: path.join(__dirname, '..', './dist'),
     filename: "[name].js"
   },
   plugins: [
@@ -25,7 +26,8 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     modules: [
-      path.resolve(__dirname, "src"), "node_modules"
+      resolve('src'),
+      resolve('node_modules'),
     ],
     alias: aliasConfig
   },
@@ -52,5 +54,10 @@ module.exports = {
          }*/
       }
     ],
-  }
+  },
+  devServer: {
+    proxy: { // proxy URLs to backend development server
+      // '/api': 'http://localhost:7001'
+    },
+  },
 }
