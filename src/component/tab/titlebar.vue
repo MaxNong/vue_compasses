@@ -1,18 +1,29 @@
 <template>
-    <div class="topbanner">
-        <dl>
-            <dd @click="updateMark" class="half"><span class="icon-navlist"></span></dd>
-            <dd class="other-half">
-            <dt @click="changeZone(0)"><span :class="[index==0||routename=='localzone' ? 'icon-localmusic-w' : 'icon-localmusic']"></span></dt>
-            <dt @click="changeZone(1)"><span :class="[index==1||routename=='remotemusic' ? 'icon-remotemusic-w' : 'icon-remotemusic']"></span></dt>
-            <dt @click="changeZone(2)"><span :class="[index==2||routename=='community' ? 'icon-moremusic-w' : 'icon-moremusic']"></span></dt>
-            </dd>
-            <dd @click="gonext()" class="half"><span class="icon-serch"></span></dd>
-        </dl>
-    </div>
+  <div class="topbanner">
+    <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <!--<dl>
+      <icon href="icon-chengzi"></icon>
+      &lt;!&ndash;<dd @click="updateMark" class="half"><span class="icon-navlist"></span></dd>
+      <dd class="other-half">
+      <dt @click="changeZone(0)"><span
+        :class="[index==0||routename=='localzone' ? 'icon-localmusic-w' : 'icon-localmusic']"></span></dt>
+      <dt @click="changeZone(1)"><span
+        :class="[index==1||routename=='remotemusic' ? 'icon-remotemusic-w' : 'icon-remotemusic']"></span></dt>
+      <dt @click="changeZone(2)"><span
+        :class="[index==2||routename=='community' ? 'icon-moremusic-w' : 'icon-moremusic']"></span></dt>
+      </dd>
+      <dd @click="gonext()" class="half"><span class="icon-serch"></span></dd>&ndash;&gt;
+    </dl>-->
+  </div>
 </template>
-<style></style>
 <script>
+  import icon from 'icon'
   export default {
     data () {
       return {
@@ -20,6 +31,9 @@
         index: 0,
         routename: ''
       }
+    },
+    components: {
+      icon
     },
     created () {
       console.log(this.$route)
@@ -34,7 +48,7 @@
         this.$router.push({name: this.box[index]})
       },
       gonext: function () {
-        window.location.herf='http://localhost:7778/#/load.html'
+        window.location.herf = 'http://localhost:7778/#/load.html'
       }
     }
   }

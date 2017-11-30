@@ -11,8 +11,8 @@ function getAbsolutePath(addr) {
 
 module.exports = {
   'vue': 'vue/dist/vue.js',
-  // constants
+  'utils': getAbsolutePath('common/utils.js'),
   'listitem': getAbsolutePath('component/list/list-item'),
-  'utils': getAbsolutePath('common/utils.js')
+  'icon': getAbsolutePath('component/icon/index.vue')
 }
 

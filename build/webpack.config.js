@@ -7,7 +7,6 @@ function resolve(dir) {
   console.log(path.join(__dirname, '..', dir))
   return path.join(__dirname, '..', dir)
 }
-
 module.exports = {
   entry: {
     index: './src/index'
