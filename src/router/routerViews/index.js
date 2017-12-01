@@ -5,7 +5,7 @@ let defaultRouter = [
     path: '/',
     name: 'home',
     component: resolve => {
-      require(['../../view/localzone.vue'], resolve)
+      require(['../../index.vue'], resolve)
     }
   },
   {

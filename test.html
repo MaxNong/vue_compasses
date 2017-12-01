@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="Keywords" content="江苏信新网上金融超市" />
+  <meta name="Description" content="江苏信新网上金融超市,江苏省金融资产交易中心独家合作伙伴" />
+  <title>机构投资者</title>
+  <!-- vue-element 样式 -->
+  <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+  <!-- <link rel="stylesheet" href="../js/vue-element/index.css"> -->
+  <!-- 自定义样式 -->
+  <link rel="stylesheet" href="../js/vue-element/organ.css">
+</head>
+<body>
+<div id="app">
+  <!-- 页头 -->
+  <my-header :user-id="user_id" :user-name="user_name"></my-header>
+  <div style="clear:both"></div>
+  <!-- main -->
+  <div class="main-organ">
+    <!-- 左菜单 -->
+    <my-left :active-class="activeClass"></my-left>
+
+    <div class="content-organ product-regular">
+      <h3 class="organ-mytit">历史交易查询</h3>
+      <div class="message-info width100">
+        <h4 class="message-info-tit">历史交易查询</h4>
+        <el-form ref="form" :model="history" label-width="80px">
+          <el-form-item label="产品类别">
+            <el-select v-model="history.type" placeholder="请选择" @change="choosetype()">
+              <el-option label="定期产品" value="1"></el-option>
+              <el-option label="活动类产品(周周赚)" value="2"></el-option>
+            </el-select>
+          </el-form-item>
+
+          <el-form-item label="期限" v-show="isTime">
+            <el-select v-model="history.regularTime" placeholder="请选择">
+              <el-option label="1个月以下" value="0"></el-option>
+              <el-option label="1-3个月" value="1"></el-option>
+              <el-option label="3-6个月" value="2"></el-option>
+              <el-option label="6-12个月" value="3"></el-option>
+              <el-option label="12个月以上" value="4"></el-option>
+            </el-select>
+          </el-form-item>
+
+          <el-form-item label="产品状态">
+            <!-- 定期状态 -->
+            <el-select v-model="history.regulartype" placeholder="请选择" v-show="isRegular">
+              <el-option label="待付款" value="0"></el-option>
+              <el-option label="持有中" value="1"></el-option>
+              <el-option label="已收益" value="2"></el-option>
+            </el-select>
+
+            <!-- 活期状态 -->
+            <el-select v-model="history.weektype" v-show="isWeek" placeholder="请选择">
+              <el-option label="待付款" value="0"></el-option>
+              <el-option label="持有中" value="1"></el-option>
+              <el-option label="赎回中" value="2"></el-option>
+              <el-option label="已收益" value="3"></el-option>
+            </el-select>
+          </el-form-item>
+
+          <!-- <el-form-item label="交易类型">
+            <el-select v-model="history.transaction" placeholder="请选择">
+              <el-option label="认购" value="1"></el-option>
+              <el-option label="赎回" value="2"></el-option>
+            </el-select>
+          </el-form-item> -->
+
+          <el-form-item label="起始时间">
+            <el-col :span="11">
+              <el-date-picker type="date" placeholder="选择日期" format="yyyy 年 MM 月 dd 日"
+                              value-format="yyyy-MM-dd" v-model="history.start" style="width: 217px;"></el-date-picker>
+            </el-col>
+          </el-form-item>
+
+          <el-form-item label="结束时间">
+            <el-col :span="11">
+              <el-date-picker type="date" placeholder="选择日期" format="yyyy 年 MM 月 dd 日"
+                              value-format="yyyy-MM-dd" v-model="history.end" style="width: 217px;"></el-date-picker>
+            </el-col>
+          </el-form-item>
+
+          <el-form-item>
+            <el-button type="primary" class="btn-search" @click="historyInfo()">查询</el-button>
+          </el-form-item>
+        </el-form>
+      </div>
+
+      <div class="pro-bill" v-show = "historyDetail">
+        <h4 class="info-tit">产品账单<a href="javascript:;">打印账单</a></h4>
+        <div class="specific-table">
+          <table cellpadding="0">
+            <tr class="bill-tit">
+              <td colspan="2">{{transaction.borrow_order}}产品账单</td>
+            </tr>
+            <tr>
+              <th>机构名称</th>
+              <td>{{transaction.borrow_order}}</td>
+            </tr>
+            <tr>
+              <th>产品名称</th>
+              <td>{{transaction.borrow_order}}</td>
+            </tr>
+            <tr>
+              <th>持有份额(元)</th>
+              <td>{{transaction.order_amt}}</td>
+            </tr>
+            <tr>
+              <th>产品期限(天)</th>
+              <td>{{transaction.financing_days}}</td>
+            </tr>
+            <tr>
+              <th>认购日期</th>
+              <td>{{transaction.add_time}}</td>
+            </tr>
+            <tr>
+              <th>起息日期</th>
+              <td>{{transaction.value_date}}</td>
+            </tr>
+            <tr>
+              <th>产品编号</th>
+              <td>{{transaction.borrow_no}}</td>
+            </tr>
+            <tr>
+              <th>协议编号</th>
+              <td>{{transaction.contract_number}}</td>
+            </tr>
+            <tr>
+              <th>预期年化收益率(%)</th>
+              <td>{{transaction.interest_rate}}</td>
+            </tr>
+            <tr>
+              <th>预期收益(元)</th>
+              <td>{{transaction.profit_amt}}</td>
+            </tr>
+            <tr>
+              <th>成立日期</th>
+              <td>{{transaction.tender_over_time}}</td>
+            </tr>
+            <tr>
+              <th>到期日期</th>
+              <td>{{transaction.income_date}}</td>
+            </tr>
+          </table>
+        </div>
+        <h3 class="second-tit">产品收益分配账户信息</h3>
+        <div class="specific-table">
+          <!-- <table cellpadding="0">
+            <tr>
+              <th>户名</th>
+              <td>{{transaction.bank_name}}</td>
+            </tr>
+            <tr>
+              <th>开户行</th>
+              <td>{{transaction.}}</td>
+            </tr>
+            <tr>
+              <th>账号</th>
+              <td>{{transaction.bank_no}}</td>
+            </tr>
+          </table> -->
+        </div>
+      </div>
+
+    </div>
+    <div style="clear:both"></div>
+  </div>
+
+  <!-- 页尾 -->
+  <my-footer></my-footer>
+</div>
+</body>
+<style>
+  .bill-tit td{
+    font-size: 14px;
+    width: 838px !important;
+    text-align: center;
+    line-height: 42px;
+  }
+  .second-tit{
+    line-height: 30px;
+    margin:20px 0 -10px 0;
+    font-weight: normal;
+  }
+  .width100 .el-form-item__label{
+    width:100px!important;
+  }
+  .regular-list{
+    margin-left: 50px;
+    display: inline-block;
+  }
+  .message-info .info-item{
+    margin-bottom: 15px;
+  }
+  .message-info-tit{
+    line-height: 70px;
+    font-size: 16px;
+  }
+  .btn-search{
+    margin-left: 21px;
+  }
+  .info-item .demonstration{
+    margin-right: 20px;
+  }
+
+  .info-detail .info-tit{
+    border-top: 1px solid #dfdfdf;
+    line-height: 50px;
+    margin-top: 50px;
+    font-size: 16px;
+    padding-top: 10px;
+  }
+  .detail-table{
+    border-left:1px solid #dfdfdf;
+    border-right:1px solid #dfdfdf;
+    border-top:1px solid #dfdfdf;
+  }
+  .detail-table .cell{
+    text-align: center;
+  }
+  .message-info .el-form-item{
+    margin-bottom: 15px;
+  }
+  .pro-bill{
+    border-top:1px solid #dfdfdf;
+    padding-top: 20px;
+    margin-top: 50px;
+  }
+  .pro-bill .info-tit {
+    font-size: 16px;
+  }
+  .pro-bill .info-tit a{
+    float: right;
+    color:#3866b6;
+    font-size: 14px;
+    font-weight: normal;
+    border:1px solid #3866b6;
+    padding:0 5px;
+    margin-left: 10px;
+    border-radius: 5px;
+  }
+</style>
+<!-- Vue -->
+<script src="../js/vue-element/vue.js"></script>
+<!-- vue-axios -->
+<script src="../js/vue-element/axios.min.js"></script>
+<!-- vue-element 组件库 -->
+<script src="../js/vue-element/index.js"></script>
+<!-- 自定义组件 -->
+<script src="../js/vue-element/my-element.js">
+</script>
+<script src="../js/vue-element/encoding.js"></script>
+<script>
+  new Vue({
+    el: '#app',
+    data: function() {
+      return {
+        visible: false,
+        user_id: "",
+        user_name: "",
+        activeClass: ["","on","",""],
+        transaction:{},
+        history:{
+          type: '',
+          regularTime: '',
+          regulartype: '',
+          weektype: '',
+          start: '',
+          end: ''
+        },
+        isRegular: false,
+        isTime: false,
+        isWeek: true,
+        historyDetail: false
+      }
+    },
+    methods:{
+      handleClick(row) {
+        console.log(row)
+      },
+      choosetype(){
+        /* console.log(this.message.type)*/
+        if(this.history.type == 1) {
+          this.isTime = true
+          this.isWeek = false
+          this.isRegular = true
+        }else{
+          this.isTime = false
+          this.isWeek = true
+          this.isRegular = false
+        }
+      },
+      historyInfo() {
+        /*console.log(this.history.type)
+         console.log(this.history.regularTime)
+         console.log(this.history.regulartype)
+         console.log(this.history.weektype)
+         console.log(this.history.start)
+         console.log(this.history.end)*/
+        var type = this.history.type
+        var regularTime = this.history.regularTime
+        var regulartype = this.history.regulartype
+        var weektype = this.history.weektype
+        var start = this.history.start
+        var end = this.history.end
+        var path = 'http://192.168.204.8/mockjsdata/1/'
+        var self = this
+        var sign = getBase('&user_id='+ localStorage.getItem("user_id"))
+        if(this.history.type == 2){
+          axios.post(path + 'institutionInfo/offlineHistoryTrade.json',{
+            'start_date': start,
+            'end_date': end,
+            'product_status': weektype,
+            'type': type,
+            'signType': 'offlineHistoryTrade.json',
+            'sign': sign,
+            'user_id': localStorage.getItem("user_id")
+          })
+            .then(function(response){
+              self.transaction = response.data.data[0]
+              console.log(self.transaction)
+              console.log(9999999999)
+            })
+            .catch(function(err){
+              console.log(err)
+            })
+        }else{
+          alert(1)
+        }
+        /*axios.post(path + 'institutionInfo/offlineHistoryTrade.json',{
+         'start_date': start,
+         'end_date': end,
+         'product_status': regulartype,
+         'financing_days': regularTime,
+         'type': type,
+         'signType': 'offlineHistoryTrade.json',
+         'sign': sign,
+         'user_id': localStorage.getItem("user_id")
+         })
+         .then(function(response){
+         self.history = response.data.data[0]
+         console.log(self.history)
+         })
+         .catch(function(err){
+         console.log(err)
+         })
+         }*/
+      }
+    },
+    created () {
+    }
+  })
+</script>
+</html>

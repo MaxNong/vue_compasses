@@ -1,15 +1,18 @@
 <template>
     <div class="main">
-        <titlebar @update:ShowLeft="(ShowLeft) => isShowLeft=ShowLeft"></titlebar>
-        <div class="maincontent">
+        <!--<titlebar @update:ShowLeft="(ShowLeft) => isShowLeft=ShowLeft"></titlebar>-->
+        <transition name="translate" mode="out-in">
+            <router-view></router-view>
+        </transition>
+        <!--<div class="maincontent">
             <transition name="translate" mode="out-in">
                 <router-view></router-view>
             </transition>
-        </div>
-        <div class="playbox">
+        </div>-->
+        <!--<div class="playbox">
             <playbar></playbar>
         </div>
-        <leftbar :isShow.sync="isShowLeft"></leftbar>
+        <leftbar :isShow.sync="isShowLeft"></leftbar>-->
     </div>
 </template>
 <style lang="sass">

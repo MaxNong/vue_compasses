@@ -16,7 +16,7 @@
 
 </style>
 <script>
-    import listitem from '../../component/list/list-item.vue'
+    import listitem from './listItem.vue'
     export default {
         props: {
             title: {
