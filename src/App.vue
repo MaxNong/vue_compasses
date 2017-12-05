@@ -11,8 +11,8 @@
         </div>-->
         <!--<div class="playbox">
             <playbar></playbar>
-        </div>
-        <leftbar :isShow.sync="isShowLeft"></leftbar>-->
+        </div>-->
+        <leftbar :isShow.sync="isShowLeft"></leftbar>
     </div>
 </template>
 <style lang="sass">
@@ -23,6 +23,7 @@
   import playbar from './component/playbar/index.vue'
   import leftbar from './component/sidebar/index.vue'
   export default {
+    name: 'app',
     components: {
       playbar,
       leftbar,

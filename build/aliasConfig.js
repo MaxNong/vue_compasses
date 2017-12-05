@@ -17,6 +17,8 @@ module.exports = {
   'constData': getAbsolutePath('/constants/contentCon.js'),
   //components
   'headerBar': getAbsolutePath('component/commonBar/headerBar.vue'),
-  'listItem': getAbsolutePath('component/list/listItem.vue')
+  'listItem': getAbsolutePath('component/list/listItem.vue'),
+  'drapList': getAbsolutePath('component/list/drapList.vue'),
+  'footPlayBar': getAbsolutePath('component/commonBar/footPlayBar.vue')
 }
 

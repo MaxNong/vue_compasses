@@ -1,11 +1,11 @@
 export default {
   //本地Tab下的列表种类配置（最近播放，本地音乐等）
   localListKinds: [
-    {message: '本地音乐', left_icon: 'icon-music'},
-    {message: '最近播放', left_icon: 'icon-musicplay'},
-    {message: '下载管理', left_icon: 'icon-download'},
-    {message: '我的电台', left_icon: 'icon-radio'},
-    {message: '我的收藏', left_icon: 'icon-collect'}
+    {message: '本地音乐', left_icon: 'icon-yumi1'},
+    {message: '最近播放', left_icon: 'icon-zhusun1'},
+    {message: '下载管理', left_icon: 'icon-yangcong1'},
+    {message: '我的电台', left_icon: 'icon-xihongshi1'},
+    {message: '我的收藏', left_icon: 'icon-xilanhua1'}
   ],
   localMusicKinds: [
     {message: '我喜欢的音乐', left_icon: 'icon-leftbtn'},
@@ -14,6 +14,10 @@ export default {
     {message: '清热解毒', left_icon: 'icon-leftbtn'},
   ],
   localCollectKinds: [
+    {message: '春风十里', left_icon: 'icon-leftbtn'},
+    {message: '才子佳人', left_icon: 'icon-leftbtn'},
+    {message: '春风十里', left_icon: 'icon-leftbtn'},
+    {message: '才子佳人', left_icon: 'icon-leftbtn'},
     {message: '春风十里', left_icon: 'icon-leftbtn'},
     {message: '才子佳人', left_icon: 'icon-leftbtn'},
   ],

@@ -1,33 +1,27 @@
 <template>
-    <div :class="{martop: isMarTop}" v-show="showHide">
-        <ul class="list-item">
-            <li v-for="item in items">
-                <div :class=item.left_icon class="icon-middle"></div>
-                <div class="messbox">{{item.message}}</div>
-            </li>
-        </ul>
-    </div>
+  <div :class="[{martop: isMarTop}, 'listitem']">
+    <ul>
+      <li v-for="item in items">
+        <icon :href="item.left_icon" size="30"></icon>
+        <p>
+          {{item.message}}
+        </p>
+      </li>
+    </ul>
+  </div>
 </template>
-<style>
-
-</style>
 <script>
-    export default {
-        props: {
-            items: {
-                type: Array,
-                require: true
-            },
-            showHide: {
-                type: Boolean,
-                require: false,
-                default: true
-            },
-            isMarTop: {
-                type: Boolean,
-                require: false,
-                default: false
-            }
-        }
+  export default {
+    props: {
+      items: {
+        type: Array,
+        require: true
+      },
+      isMarTop: {
+        type: Boolean,
+        require: false,
+        default: false
+      }
     }
+  }
 </script>

@@ -1,45 +1,38 @@
 <template>
-    <div>
-        <div @click="showHideList()" class="toptrans">
-            <div class="flo-left midpic">
-                <i :class="[upDown ? 'icon-up' : 'icon-down']"></i>
-            </div>
-            <span>{{title}}</span>
-            <div class="flo-right midpic">
-                <img src="../../assets/images/set.png" alt="">
-            </div>
-        </div>
-        <listitem :showHide="showHide" :items="items"></listitem>
+  <div>
+    <div @click="showHideList" class="draplist">
+      <icon :href="isShow ? 'icon-xia' : 'icon-shang'" size="15"></icon>
+      <span class="drap-title">{{title}}</span>
+      <icon class="rig-svg" href="icon-shezhi" size="15"></icon>
     </div>
+    <listItem v-show="isShow" :items="items"></listItem>
+  </div>
 </template>
-<style>
-
-</style>
 <script>
-    import listitem from './listItem.vue'
-    export default {
-        props: {
-            title: {
-                type: String,
-                default: ''
-            },
-            items: {
-                type: Array,
-                default: []
-            }
-        },
-        data () {
-            return {
-                showHide: true,
-                upDown: false
-            }
-        },
-        components: {listitem},
-        methods: {
-            showHideList: function () {
-                this.showHide = !this.showHide
-                this.upDown = !this.upDown
-            }
-        }
+  import listItem from 'listItem'
+  export default {
+    props: {
+      title: {
+        type: String,
+        default: ''
+      },
+      items: {
+        type: Array,
+        default: []
+      }
+    },
+    data () {
+      return {
+        isShow: true
+      }
+    },
+    components: {
+      listItem
+    },
+    methods: {
+      showHideList: function () {
+        this.isShow = !this.isShow
+      }
     }
+  }
 </script>

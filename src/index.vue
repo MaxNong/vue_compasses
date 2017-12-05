@@ -1,22 +1,28 @@
 <template>
   <div>
     <headerBar></headerBar>
-    <listItem :isMarTop="true" :items="localListKinds"></listItem>
+    <listItem :items="listMusic"></listItem>
+    <drapList :items="createdMusic" title="收藏的歌单"></drapList>
+    <drapList :items="collectMusic" title="收藏的歌单"></drapList>
+    <footPlayBar></footPlayBar>
   </div>
 </template>
 <script>
-  import headerBar from 'headerBar'
   import listItem from 'listItem'
-  import constData from 'constData'
+  import drapList from 'drapList'
+  import footPlayBar from 'footPlayBar'
   export default {
     data () {
       return {
-        localListKinds: constData.localListKinds
+        listMusic: Config.constData.localListKinds,
+        createdMusic: Config.constData.localMusicKinds,
+        collectMusic: Config.constData.localCollectKinds
       }
     },
     components: {
-      headerBar,
-      listItem
+      listItem,
+      drapList,
+      footPlayBar
     }
   }
 </script>

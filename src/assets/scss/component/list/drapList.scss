@@ -1,3 +1,27 @@
+.draplist{
+  height: 30px;
+  font-size: 13px;
+  background: lightgray;
+  line-height: 30px;
+  margin-top: -7px;
+  .drap-title{
+    font-size: 12px;
+  }
+  svg:first-child{
+    position: absolute;
+    margin-top: 8px;
+    margin-left: 4px;
+  }
+  .rig-svg{
+    margin-top: 8px;
+    margin-right: 4px;
+    float: right;
+  }
+  span{
+    margin-left: 32px;
+  }
+}
+/*
 .toptrans{
   height: 4rem;
   background: #E7E9E9;
@@ -34,3 +58,4 @@
   float: left;
 }
 
+*/
