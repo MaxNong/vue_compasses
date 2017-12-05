@@ -8,9 +8,11 @@
   </div>
 </template>
 <script>
+  console.log('index.vue')
   import listItem from 'listItem'
   import drapList from 'drapList'
   import footPlayBar from 'footPlayBar'
+  import Config from 'Config'
   export default {
     data () {
       return {

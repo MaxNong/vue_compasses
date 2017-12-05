@@ -77,12 +77,12 @@
         <span><img src="../../assets/images/cry.png" width="25" alt="">退出</span>
       </div>
     </div>
-    <div @click="closeMusicList" class="maskscreen" v-show="ismask"></div>
+    <div @click="closeMusicList" class="maskscreen" v-show="isShow"></div>
   </section>
 </template>
 <script>
-  console.log(window.Vue)
-  console.log(this)
+  console.log('sidebar.vue')
+  import Config from 'Config'
   export default {
     data () {
       return {
@@ -90,13 +90,14 @@
       }
     },
     computed: {
-      ismask: function () {
-        return this.isShow ? true : false
-      },
+      left: function () {
+        window.alert(222)
+        return Config.isShowLeft
+      }
     },
     methods: {
       closeMusicList: function () {
-        Vue.set(Config, 'isShowLeft', false)
+        Config.isShowLeft = !Config.isShowLeft
       }
     }
   }

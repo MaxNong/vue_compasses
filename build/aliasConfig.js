@@ -13,6 +13,8 @@ module.exports = {
   'vue': 'vue/dist/vue.js',
   'utils': getAbsolutePath('common/utils.js'),
   'icon': getAbsolutePath('component/icon/index.vue'),
+  //config
+  Config: path.resolve(__dirname, '../config/config.js'),
   //constData
   'constData': getAbsolutePath('/constants/contentCon.js'),
   //components

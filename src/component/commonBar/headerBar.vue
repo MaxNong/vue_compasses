@@ -10,12 +10,21 @@
   </nav>
 </template>
 <script>
+  console.log('headerBar.vue')
+  import Config from 'Config'
   export default {
     name: 'headerBar',
     methods: {
       handelLeftBar: function () {
-        console.log(this.isShowLeft)
-        this.isShowLeft = !this.isShowLeft
+//        Config.isShowLeft = !Config.isShowLeft
+        console.log(Config)
+        let newObj = Object.assign({}, Config)
+        newObj.isShowLeft = !newObj.isShowLeft
+//        Config.setLeft(newObj.isShowLeft)
+        console.log(Config)
+        console.log(newObj)
+        Config.setLeft(newObj)
+        console.log(Config)
       }
     }
   }

@@ -12,22 +12,23 @@
         <!--<div class="playbox">
             <playbar></playbar>
         </div>-->
-        <leftbar :isShow.sync="isShowLeft"></leftbar>
+        <leftbar></leftbar>
     </div>
 </template>
 <style lang="sass">
     @import "./assets/scss/common.scss"
 </style>
 <script>
-  import titlebar from './component/tab/titlebar.vue'
-  import playbar from './component/playbar/index.vue'
+    console.log('APP.vue')
+//  import titlebar from './component/tab/titlebar.vue'
+//  import playbar from './component/playbar/index.vue'
   import leftbar from './component/sidebar/index.vue'
   export default {
     name: 'app',
     components: {
-      playbar,
-      leftbar,
-      titlebar
+//      playbar
+      leftbar
+//      titlebar
     },
     data() {
       return {
@@ -35,6 +36,7 @@
       }
     },
     created () {
+      console.log('app.vue created')
       this.$route.name == 'home' ? this.$router.push({name: 'localzone'}) : ''
     }
   }
