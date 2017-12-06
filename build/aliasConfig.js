@@ -21,6 +21,7 @@ module.exports = {
   'headerBar': getAbsolutePath('component/commonBar/headerBar.vue'),
   'listItem': getAbsolutePath('component/list/listItem.vue'),
   'drapList': getAbsolutePath('component/list/drapList.vue'),
-  'footPlayBar': getAbsolutePath('component/commonBar/footPlayBar.vue')
+  'footPlayBar': getAbsolutePath('component/commonBar/footPlayBar.vue'),
+  'swiper': getAbsolutePath('component/swiper/index.vue')
 }
 

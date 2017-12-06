@@ -11,7 +11,6 @@
   </div>
 </template>
 <script>
-  console.log('listitem.vue')
   export default {
     props: {
       items: {

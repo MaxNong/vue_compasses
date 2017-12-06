@@ -1,29 +1,27 @@
 <template>
     <div>
-        <div v-for="item in items" class="groombox">
-            <div class="groom-title">
-                <span class="icon-montant blockspan"></span>
-                <span>{{item.title}}</span>
-                <span>&nbsp;</span>
+        <div v-for="item in groomList" class="groom-box">
+            <div>
+                <h3>{{item.title}}</h3>
             </div>
             <ul>
-                <li v-for="list in item.content" class="musbox">
-                    <i :class="list.img"></i>
-                    <span>{{list.text}}</span>
+                <li v-for="list in item.content" class="">
+                    <img :src="list.img" alt="">
+                    <p>{{list.text}}</p>
                 </li>
             </ul>
         </div>
     </div>
 </template>
-<style>
-
-</style>
 <script>
-  import contentCon from '../../constants/contentCon'
   export default {
     data(){
       return {
-        items: contentCon.musboxdetail
+      }
+    },
+    props: {
+      groomList: {
+        type: Array
       }
     }
   }

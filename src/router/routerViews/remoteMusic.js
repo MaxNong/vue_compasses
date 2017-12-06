@@ -1,12 +1,5 @@
 export default [
   {
-    path: '/localzone',
-    name: 'localzone',
-    component: resolve => {
-      require(['../../view/localzone.vue'], resolve)
-    }
-  },
-  {
     path: '/remotemusic',
     name: 'remotemusic',
     component: resolve => {

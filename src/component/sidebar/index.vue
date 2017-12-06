@@ -1,6 +1,6 @@
 <template>
   <section class="sidebarleft">
-    <div :class="[isShow ? 'mask1' : 'mask']">
+    <div :class="[isShow.isShowLeft ? 'mask1' : 'mask']">
       <div class="sidebar">
         <div class="sidebar-title">
           <img src="../../assets/images/Smile.png" width="80" alt="">
@@ -77,22 +77,15 @@
         <span><img src="../../assets/images/cry.png" width="25" alt="">退出</span>
       </div>
     </div>
-    <div @click="closeMusicList" class="maskscreen" v-show="isShow"></div>
+    <div @click="closeMusicList" class="maskscreen" v-show="isShow.isShowLeft"></div>
   </section>
 </template>
 <script>
-  console.log('sidebar.vue')
   import Config from 'Config'
   export default {
     data () {
       return {
-        isShow: Config.isShowLeft
-      }
-    },
-    computed: {
-      left: function () {
-        window.alert(222)
-        return Config.isShowLeft
+        isShow: Config
       }
     },
     methods: {

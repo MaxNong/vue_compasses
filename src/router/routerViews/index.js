@@ -1,5 +1,4 @@
 import RemoteMusic from './remoteMusic'
-let routers = []
 let defaultRouter = [
   {
     path: '/',
@@ -13,5 +12,5 @@ let defaultRouter = [
     redirect: '/'
   }
 ]
-routers = Array.prototype.concat(RemoteMusic, defaultRouter)
+let routers = Array.prototype.concat(RemoteMusic, defaultRouter)
 export default  routers

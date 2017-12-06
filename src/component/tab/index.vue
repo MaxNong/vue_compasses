@@ -1,7 +1,9 @@
 <template>
-    <div class="tabbox">
+    <div class="tab-content">
         <ul>
-            <li :class="{active: activeIndex == index}" @click="changeTab(index)" v-for="(item, index) in items">{{item.text}}</li>
+            <li :style="{width: 100/tabList.length+'%'}" :class="{active: activeIndex == index}" @click="changeTab(index)" v-for="(item, index) in tabList">
+                {{item.text}}
+            </li>
         </ul>
     </div>
 </template>
@@ -9,12 +11,15 @@
 
 </style>
 <script>
-  import contentCon from '../../constants/contentCon'
   export default {
     data(){
       return {
-        items: contentCon.remoteMusicTab,
         activeIndex: 0
+      }
+    },
+    props: {
+      tabList: {
+        type: Array
       }
     },
     methods: {

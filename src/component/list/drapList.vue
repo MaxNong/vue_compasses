@@ -9,7 +9,6 @@
   </div>
 </template>
 <script>
-  console.log('drapList.vue')
   import listItem from 'listItem'
   export default {
     props: {
