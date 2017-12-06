@@ -1,9 +1,9 @@
 <template>
-
+  <div>
+    <headerBar></headerBar>
+    社区
+  </div>
 </template>
-<style>
-
-</style>
 <script>
 
 </script>

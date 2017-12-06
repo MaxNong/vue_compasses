@@ -4,7 +4,6 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 var aliasConfig = require('./aliasConfig.js')
 
 function resolve(dir) {
-  console.log(path.join(__dirname, '..', dir))
   return path.join(__dirname, '..', dir)
 }
 module.exports = {
