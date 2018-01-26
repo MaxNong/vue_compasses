@@ -11,7 +11,7 @@
   import listItem from 'listItem'
   import drapList from 'drapList'
   import footPlayBar from 'footPlayBar'
-  import Config from 'Config'
+  import Config from 'config'
   export default {
     data () {
       return {

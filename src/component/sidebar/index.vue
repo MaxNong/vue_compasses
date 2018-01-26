@@ -81,7 +81,7 @@
   </section>
 </template>
 <script>
-  import Config from 'Config'
+  import Config from 'config'
   export default {
     data () {
       return {

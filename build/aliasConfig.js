@@ -14,14 +14,18 @@ module.exports = {
   'utils': getAbsolutePath('common/utils.js'),
   'icon': getAbsolutePath('component/icon/index.vue'),
   //config
-  Config: path.resolve(__dirname, '../config/config.js'),
+  config: path.resolve(__dirname, '../config/config.js'),
   //constData
   'constData': getAbsolutePath('/constants/contentCon.js'),
+  'apiConfig': getAbsolutePath('/constants/config.api.js'),
+  // service
+  'api': getAbsolutePath('/services/api.js'),
   //components
   'headerBar': getAbsolutePath('component/commonBar/headerBar.vue'),
   'listItem': getAbsolutePath('component/list/listItem.vue'),
   'drapList': getAbsolutePath('component/list/drapList.vue'),
   'footPlayBar': getAbsolutePath('component/commonBar/footPlayBar.vue'),
-  'swiper': getAbsolutePath('component/swiper/index.vue')
+  'swiper': getAbsolutePath('component/swiper/index.vue'),
+  'xButton': getAbsolutePath('component/button/xButton.vue')
 }
 

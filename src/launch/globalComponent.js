@@ -2,6 +2,7 @@
  * 统一管理全局组件
  */
 import globalComponent from '../component/global.js'
+import Api from 'api'
 
 let components= {
   initComponents (vue) {

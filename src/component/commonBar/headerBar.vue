@@ -10,7 +10,7 @@
   </nav>
 </template>
 <script>
-  import Config from 'Config'
+  import Config from 'config'
   export default {
     name: 'headerBar',
     methods: {

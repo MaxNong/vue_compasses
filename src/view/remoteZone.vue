@@ -35,7 +35,7 @@
 <script>
   import swiper from 'swiper'
   import tab from '../component/tab/index.vue'
-  import Config from 'Config'
+  import Config from 'config'
   import groombox from '../component/groombox/index.vue'
   export default {
     data () {
